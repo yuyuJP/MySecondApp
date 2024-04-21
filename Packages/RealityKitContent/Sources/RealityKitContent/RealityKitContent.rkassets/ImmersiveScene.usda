@@ -1,0 +1,333 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 1.0 (409.100.15)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def "fender_stratocaster" (
+        active = true
+        prepend references = @fender_stratocaster.usdz@
+    )
+    {
+        quatf xformOp:orient = (0.99999994, 0, 0, 0)
+        float3 xformOp:scale = (0.014343219, 0.014343219, 0.014343219)
+        float3 xformOp:translate = (0.50000006, 0.50000006, -2.0000002)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (52.44069, 108.33382, 45.318356)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (0, 54.126152, -6.399454)
+                }
+            }
+        }
+
+        def RealityKitComponent "InputTarget"
+        {
+            uniform token info:id = "RealityKit.InputTarget"
+        }
+
+        def RealityKitComponent "ImageBasedLight"
+        {
+            uniform token info:id = "RealityKit.ImageBasedLight"
+            float intensityExponent = 10.430996
+            bool isGlobalIBL = 0
+        }
+    }
+
+    def "fender_stratocaster_1" (
+        active = true
+        prepend references = @fender_stratocaster.usdz@
+    )
+    {
+        quatf xformOp:orient = (0.99999994, 0, 0, 0)
+        float3 xformOp:scale = (0.014343219, 0.014343219, 0.014343219)
+        float3 xformOp:translate = (-0.5, 0.50000006, -2.0000002)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Looks"
+        {
+            over "pxrusdpreviewsurface1sg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface1sg/stratocasterguitar_bodywood_material.outputs:surface>
+
+                over "stratocasterguitar_bodywood_material"
+                {
+                    color3f inputs:diffuseColor.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface1sg/Stratocaster_Export_file11.outputs:rgb>
+                }
+
+                over "Stratocaster_Export_file11"
+                {
+                    float2 inputs:st.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface1sg/Stratocaster_Export_file11_T2D.outputs:result>
+                }
+
+                over "Stratocaster_Export_file11_T2D"
+                {
+                    string inputs:varname.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface1sg.inputs:Stratocaster_Export_file11:varname>
+                }
+            }
+
+            over "pxrusdpreviewsurface2sg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface2sg/stratocasterguitar_buttontone_material.outputs:surface>
+
+                over "stratocasterguitar_buttontone_material"
+                {
+                    color3f inputs:diffuseColor.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface2sg/Stratocaster_Export_file14.outputs:rgb>
+                }
+
+                over "Stratocaster_Export_file14"
+                {
+                    float2 inputs:st.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface2sg/Stratocaster_Export_file14_T2D.outputs:result>
+                }
+
+                over "Stratocaster_Export_file14_T2D"
+                {
+                    string inputs:varname.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface2sg.inputs:Stratocaster_Export_file14:varname>
+                }
+            }
+
+            over "pxrusdpreviewsurface3sg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface3sg/stratocasterguitar_buttonvolume_material.outputs:surface>
+
+                over "stratocasterguitar_buttonvolume_material"
+                {
+                    color3f inputs:diffuseColor.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface3sg/Stratocaster_Export_file13.outputs:rgb>
+                }
+
+                over "Stratocaster_Export_file13"
+                {
+                    float2 inputs:st.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface3sg/Stratocaster_Export_file13_T2D.outputs:result>
+                }
+
+                over "Stratocaster_Export_file13_T2D"
+                {
+                    string inputs:varname.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface3sg.inputs:Stratocaster_Export_file13:varname>
+                }
+            }
+
+            over "pxrusdpreviewsurface4sg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface4sg/stratocasterguitar_chrome_material.outputs:surface>
+            }
+
+            over "pxrusdpreviewsurface5sg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface5sg/stratocasterguitar_metalstring_material.outputs:surface>
+            }
+
+            over "pxrusdpreviewsurface6sg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface6sg/stratocasterguitar_neckwood_material.outputs:surface>
+
+                over "stratocasterguitar_neckwood_material"
+                {
+                    color3f inputs:diffuseColor.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface6sg/Stratocaster_Export_file15.outputs:rgb>
+                }
+
+                over "Stratocaster_Export_file15"
+                {
+                    float2 inputs:st.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface6sg/Stratocaster_Export_file15_T2D.outputs:result>
+                }
+
+                over "Stratocaster_Export_file15_T2D"
+                {
+                    string inputs:varname.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface6sg.inputs:Stratocaster_Export_file15:varname>
+                }
+            }
+
+            over "pxrusdpreviewsurface7sg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface7sg/stratocasterguitar_plasticblack_material.outputs:surface>
+            }
+
+            over "pxrusdpreviewsurface8sg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface8sg/stratocasterguitar_plasticwhite_material.outputs:surface>
+            }
+
+            over "pxrusdpreviewsurface10sg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface10sg/stratocasterstand_material.outputs:surface>
+
+                over "stratocasterstand_material"
+                {
+                    color3f inputs:diffuseColor.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface10sg/_file9.outputs:rgb>
+                    float inputs:metallic.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface10sg/_file11.outputs:r>
+                    normal3f inputs:normal.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface10sg/_file10.outputs:rgb>
+                    float inputs:roughness.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface10sg/_file12.outputs:r>
+                }
+
+                over "_file10"
+                {
+                    float2 inputs:st.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface10sg/_file10_T2D.outputs:result>
+                }
+
+                over "_file10_T2D"
+                {
+                    string inputs:varname.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface10sg.inputs:_file10:varname>
+                }
+
+                over "_file12"
+                {
+                    float2 inputs:st.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface10sg/_file12_T2D.outputs:result>
+                }
+
+                over "_file12_T2D"
+                {
+                    string inputs:varname.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface10sg.inputs:_file12:varname>
+                }
+
+                over "_file9"
+                {
+                    float2 inputs:st.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface10sg/_file9_T2D.outputs:result>
+                }
+
+                over "_file9_T2D"
+                {
+                    string inputs:varname.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface10sg.inputs:_file9:varname>
+                }
+
+                over "_file11"
+                {
+                    float2 inputs:st.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface10sg/_file11_T2D.outputs:result>
+                }
+
+                over "_file11_T2D"
+                {
+                    string inputs:varname.connect = </Root/fender_stratocaster_1/Looks/pxrusdpreviewsurface10sg.inputs:_file11:varname>
+                }
+            }
+
+            over "pasted__stratocasterguitar_neckwood_materialsg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/pasted__stratocasterguitar_neckwood_materialsg/stratocasterguitar_neckwood_fret_material.outputs:surface>
+
+                over "stratocasterguitar_neckwood_fret_material"
+                {
+                    color3f inputs:diffuseColor.connect = </Root/fender_stratocaster_1/Looks/pasted__stratocasterguitar_neckwood_materialsg/pasted__file15.outputs:rgb>
+                }
+
+                over "pasted__file15"
+                {
+                    float2 inputs:st.connect = </Root/fender_stratocaster_1/Looks/pasted__stratocasterguitar_neckwood_materialsg/pasted__file15_T2D.outputs:result>
+                }
+
+                over "pasted__file15_T2D"
+                {
+                    string inputs:varname.connect = </Root/fender_stratocaster_1/Looks/pasted__stratocasterguitar_neckwood_materialsg.inputs:pasted__file15:varname>
+                }
+            }
+
+            over "stratocasterguitar_plasticwhite_pickguard_materialsg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/stratocasterguitar_plasticwhite_pickguard_materialsg/stratocasterguitar_plasticwhite_pickguard_material.outputs:surface>
+            }
+
+            over "stratocasterguitar_buttontone2_materialsg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/stratocasterguitar_buttontone2_materialsg/stratocasterguitar_buttontone2_material.outputs:surface>
+
+                over "stratocasterguitar_buttontone2_material"
+                {
+                    color3f inputs:diffuseColor.connect = </Root/fender_stratocaster_1/Looks/stratocasterguitar_buttontone2_materialsg/pasted__file14.outputs:rgb>
+                }
+
+                over "pasted__file14"
+                {
+                    float2 inputs:st.connect = </Root/fender_stratocaster_1/Looks/stratocasterguitar_buttontone2_materialsg/pasted__file14_T2D.outputs:result>
+                }
+
+                over "pasted__file14_T2D"
+                {
+                    string inputs:varname.connect = </Root/fender_stratocaster_1/Looks/stratocasterguitar_buttontone2_materialsg.inputs:pasted__file14:varname>
+                }
+            }
+
+            over "stratocasterguitar_plasticwhite__stripe1_materialsg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/stratocasterguitar_plasticwhite__stripe1_materialsg/stratocasterguitar_plasticwhite__stripe1_material.outputs:surface>
+            }
+
+            over "stratocasterguitar_plasticwhite__stripe2_materialsg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/stratocasterguitar_plasticwhite__stripe2_materialsg/stratocasterguitar_plasticwhite__stripe2_material.outputs:surface>
+            }
+
+            over "stratocasterguitar_plasticblack_stripe_materialsg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/stratocasterguitar_plasticblack_stripe_materialsg/stratocasterguitar_plasticblack_stripe_material.outputs:surface>
+            }
+
+            over "stratocasterguitar_metalstring2_materialsg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/stratocasterguitar_metalstring2_materialsg/stratocasterguitar_metalstring2_material.outputs:surface>
+            }
+
+            over "pasted__stratocasterguitar_synthstring_materialsg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/pasted__stratocasterguitar_synthstring_materialsg/pasted__stratocasterguitar_synthstring_material.outputs:surface>
+            }
+
+            over "pasted__stratocasterguitar_chrome_backplate_materialsg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/pasted__stratocasterguitar_chrome_backplate_materialsg/pasted__stratocasterguitar_chrome_backplate_material.outputs:surface>
+            }
+
+            over "pasted__pasted__stratocasterguitar_plasticwhite__stripe2_materialsg"
+            {
+                token outputs:surface.connect = </Root/fender_stratocaster_1/Looks/pasted__pasted__stratocasterguitar_plasticwhite__stripe2_materialsg/pasted__pasted__stratocasterguitar_plasticwhite__stripe2_material.outputs:surface>
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (52.44069, 108.33382, 45.318356)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (0, 54.126152, -6.399454)
+                }
+            }
+        }
+
+        def RealityKitComponent "InputTarget"
+        {
+            uniform token info:id = "RealityKit.InputTarget"
+        }
+
+        def RealityKitComponent "ImageBasedLight"
+        {
+            uniform token info:id = "RealityKit.ImageBasedLight"
+            float intensityExponent = 10.430996
+            bool isGlobalIBL = 0
+        }
+    }
+}
+
